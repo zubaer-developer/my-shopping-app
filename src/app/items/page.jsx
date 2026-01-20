@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ItemsPage = async () => {
   // data fetch
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`);
@@ -23,9 +25,11 @@ const ItemsPage = async () => {
             <p className="text-gray-600 text-sm">{item.description}</p>
             <p className="text-blue-600 font-bold mt-2">Price: ${item.price}</p>
 
-            <button className="mt-3 bg-black text-white px-4 py-1 rounded w-full">
-              View Details
-            </button>
+            <Link href={`/items/${item.id}`}>
+              <button className="mt-3 bg-black text-white px-4 py-1 rounded w-full">
+                View Details
+              </button>
+            </Link>
           </div>
         ))}
       </div>

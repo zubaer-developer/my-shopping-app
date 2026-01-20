@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
+export function proxy(request) {
   // Login status check from cookies
   const isLoggedIn = request.cookies.get("isLoggedIn");
 
